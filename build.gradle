@@ -1,0 +1,22 @@
+plugins {
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
+    id "org.asciidoctor.jvm.pdf" version "3.3.2"
+}
+
+repositories {
+    mavenCentral()
+}
+
+asciidoctor {
+    options = ["doctype": "book"]
+    sourceDir = "src/docs/asciidoc"
+    attributes = [
+        "imagesdir": "images"
+    ]
+
+    doLast {
+        ant.copy(todir: "${buildDir}/docs/asciidoc/images") {
+            fileset(dir: "src/docs/images")
+        }
+    }
+}

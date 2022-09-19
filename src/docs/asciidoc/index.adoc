@@ -1,6 +1,12 @@
 
-= sugar-cubes library
+= sugar-cubes
+
+Bunch of Java libraries.
+
+image::sugar-256.png[]
 
 == sugar-cubes-cloner
 
-https://github.com/sugar-cubes/sugar-cubes-cloner
+Cloner library.
+
+Github: https://github.com/sugar-cubes/sugar-cubes-cloner
