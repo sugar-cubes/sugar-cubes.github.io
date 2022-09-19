@@ -30,13 +30,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - name: Generate HTML from asciidoc
+        run: ./gradlew asciidoctor
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '.'
+          path: 'build/docs/asciidoc'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
